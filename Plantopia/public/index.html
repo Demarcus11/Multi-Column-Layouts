@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi Column Layout - Plantopia</title>
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js" defer></script>
+</head>
+
+<body>
+    <header class="primary-header">
+        <h1 class="site-title">
+            <a href="#">
+                <i class="fa-solid fa-seedling"></i>
+                Plantopia
+            </a>
+        </h1>
+
+        <button class="add-plant-btn btn dark-btn" data-add-plant-btn>
+            <i class="fa-solid fa-plus"></i>
+            Add Plant
+        </button>
+    </header>
+
+    <main>
+        <section class="site-section section-outline">
+            <h2 class="section-title">Today's Waterings</h2>
+
+            <div class="grid-wrapper">
+                <div class="plant-card">
+                    <img class="plant-card-img" src="./images/Plant-Music-1162975190.webp" alt="Plant 1 Name">
+
+                    <div class="plant-card-content">
+                        <p class="plant-card-title">Plant 1 Name</p>
+                        <div class="plant-card-label-group">
+                            <svg class="plant-card-label-icon" xmlns="http://www.w3.org/2000/svg" width="1em"
+                                height="1em" viewBox="0 0 512 512">
+                                <path fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"
+                                    d="M400 320c0 88.37-55.63 144-144 144s-144-55.63-144-144c0-94.83 103.23-222.85 134.89-259.88a12 12 0 0 1 18.23 0C296.77 97.15 400 225.17 400 320Z" />
+                                <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="32" d="M344 328a72 72 0 0 1-72 72" />
+                            </svg>
+                            <div>
+                                <p class="plant-card-label">Next watering</p>
+                                <p class="plant-card-value">8 days</p>
+                            </div>
+                        </div>
+                        <div class="plant-card-label-group">
+                            <svg class="plant-card-label-icon" xmlns="http://www.w3.org/2000/svg" width="1em"
+                                height="1em" viewBox="0 0 16 16">
+                                <path fill="currentColor"
+                                    d="M8 15c-3.86 0-7-3.14-7-7s3.14-7 7-7s7 3.14 7 7s-3.14 7-7 7M8 2C4.69 2 2 4.69 2 8s2.69 6 6 6s6-2.69 6-6s-2.69-6-6-6" />
+                                <path fill="currentColor"
+                                    d="M10 10.5c-.09 0-.18-.02-.26-.07l-2.5-1.5A.5.5 0 0 1 7 8.5v-4c0-.28.22-.5.5-.5s.5.22.5.5v3.72l2.26 1.35a.502.502 0 0 1-.26.93" />
+                            </svg>
+                            <div>
+                                <p class="plant-card-label">Water frequency</p>
+                                <p class="plant-card-value">2 / Week</p>
+                            </div>
+                        </div>
+                        <div class="plant-card-label-group">
+                            <svg class="plant-card-label-icon" xmlns="http://www.w3.org/2000/svg" width="1em"
+                                height="1em" viewBox="0 0 1024 1024">
+                                <path fill="currentColor"
+                                    d="M536.1 273H488c-4.4 0-8 3.6-8 8v275.3c0 2.6 1.2 5 3.3 6.5l165.3 120.7c3.6 2.6 8.6 1.9 11.2-1.7l28.6-39c2.7-3.7 1.9-8.7-1.7-11.2L544.1 528.5V281c0-4.4-3.6-8-8-8m219.8 75.2l156.8 38.3c5 1.2 9.9-2.6 9.9-7.7l.8-161.5c0-6.7-7.7-10.5-12.9-6.3L752.9 334.1a8 8 0 0 0 3 14.1m167.7 301.1l-56.7-19.5a8 8 0 0 0-10.1 4.8c-1.9 5.1-3.9 10.1-6 15.1c-17.8 42.1-43.3 80-75.9 112.5a353 353 0 0 1-112.5 75.9a352.2 352.2 0 0 1-137.7 27.8c-47.8 0-94.1-9.3-137.7-27.8a353 353 0 0 1-112.5-75.9c-32.5-32.5-58-70.4-75.9-112.5A353.4 353.4 0 0 1 171 512c0-47.8 9.3-94.2 27.8-137.8c17.8-42.1 43.3-80 75.9-112.5a353 353 0 0 1 112.5-75.9C430.6 167.3 477 158 524.8 158s94.1 9.3 137.7 27.8A353 353 0 0 1 775 261.7c10.2 10.3 19.8 21 28.6 32.3l59.8-46.8C784.7 146.6 662.2 81.9 524.6 82C285 82.1 92.6 276.7 95 516.4C97.4 751.9 288.9 942 524.8 942c185.5 0 343.5-117.6 403.7-282.3c1.5-4.2-.7-8.9-4.9-10.4" />
+                            </svg>
+                            <div>
+                                <p class="plant-card-label">Last watering</p>
+                                <p class="plant-card-value">4 days ago</p>
+                            </div>
+                        </div>
+                        <div class="plant-card-label-group">
+                            <svg class="plant-card-label-icon" xmlns="http://www.w3.org/2000/svg" width="1em"
+                                height="1em" viewBox="0 0 32 32">
+                                <path fill="currentColor"
+                                    d="M16.612 2.214a1.01 1.01 0 0 0-1.242 0L1 13.419l1.243 1.572L4 13.621V26a2.004 2.004 0 0 0 2 2h20a2.004 2.004 0 0 0 2-2V13.63L29.757 15L31 13.428ZM18 26h-4v-8h4Zm2 0v-8a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v8H6V12.062l10-7.79l10 7.8V26Z" />
+                            </svg>
+                            <div>
+                                <p class="plant-card-label">Location</p>
+                                <p class="plant-card-value">Living Room</p>
+                            </div>
+                        </div>
+
+                        <button class="mark-as-watered-btn btn dark-btn">Mark as watered</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="site-section">
+            <h2 class="section-title">All Plants</h2>
+
+            <div class="grid-wrapper">
+                <div class="plant-card">
+                    <img class="plant-card-img" src="./images/Plant-Music-1162975190.webp" alt="Plant 1 Name">
+
+                    <div class="plant-card-content">
+                        <p class="plant-card-title">Plant 1 Name</p>
+                        <div class="plant-card-label-group">
+                            <svg class="plant-card-label-icon" xmlns="http://www.w3.org/2000/svg" width="1em"
+                                height="1em" viewBox="0 0 512 512">
+                                <path fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"
+                                    d="M400 320c0 88.37-55.63 144-144 144s-144-55.63-144-144c0-94.83 103.23-222.85 134.89-259.88a12 12 0 0 1 18.23 0C296.77 97.15 400 225.17 400 320Z" />
+                                <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="32" d="M344 328a72 72 0 0 1-72 72" />
+                            </svg>
+                            <div>
+                                <p class="plant-card-label">Next watering</p>
+                                <p class="plant-card-value">8 days</p>
+                            </div>
+                        </div>
+                        <div class="plant-card-label-group">
+                            <svg class="plant-card-label-icon" xmlns="http://www.w3.org/2000/svg" width="1em"
+                                height="1em" viewBox="0 0 16 16">
+                                <path fill="currentColor"
+                                    d="M8 15c-3.86 0-7-3.14-7-7s3.14-7 7-7s7 3.14 7 7s-3.14 7-7 7M8 2C4.69 2 2 4.69 2 8s2.69 6 6 6s6-2.69 6-6s-2.69-6-6-6" />
+                                <path fill="currentColor"
+                                    d="M10 10.5c-.09 0-.18-.02-.26-.07l-2.5-1.5A.5.5 0 0 1 7 8.5v-4c0-.28.22-.5.5-.5s.5.22.5.5v3.72l2.26 1.35a.502.502 0 0 1-.26.93" />
+                            </svg>
+                            <div>
+                                <p class="plant-card-label">Water frequency</p>
+                                <p class="plant-card-value">2 / Week</p>
+                            </div>
+                        </div>
+                        <div class="plant-card-label-group">
+                            <svg class="plant-card-label-icon" xmlns="http://www.w3.org/2000/svg" width="1em"
+                                height="1em" viewBox="0 0 1024 1024">
+                                <path fill="currentColor"
+                                    d="M536.1 273H488c-4.4 0-8 3.6-8 8v275.3c0 2.6 1.2 5 3.3 6.5l165.3 120.7c3.6 2.6 8.6 1.9 11.2-1.7l28.6-39c2.7-3.7 1.9-8.7-1.7-11.2L544.1 528.5V281c0-4.4-3.6-8-8-8m219.8 75.2l156.8 38.3c5 1.2 9.9-2.6 9.9-7.7l.8-161.5c0-6.7-7.7-10.5-12.9-6.3L752.9 334.1a8 8 0 0 0 3 14.1m167.7 301.1l-56.7-19.5a8 8 0 0 0-10.1 4.8c-1.9 5.1-3.9 10.1-6 15.1c-17.8 42.1-43.3 80-75.9 112.5a353 353 0 0 1-112.5 75.9a352.2 352.2 0 0 1-137.7 27.8c-47.8 0-94.1-9.3-137.7-27.8a353 353 0 0 1-112.5-75.9c-32.5-32.5-58-70.4-75.9-112.5A353.4 353.4 0 0 1 171 512c0-47.8 9.3-94.2 27.8-137.8c17.8-42.1 43.3-80 75.9-112.5a353 353 0 0 1 112.5-75.9C430.6 167.3 477 158 524.8 158s94.1 9.3 137.7 27.8A353 353 0 0 1 775 261.7c10.2 10.3 19.8 21 28.6 32.3l59.8-46.8C784.7 146.6 662.2 81.9 524.6 82C285 82.1 92.6 276.7 95 516.4C97.4 751.9 288.9 942 524.8 942c185.5 0 343.5-117.6 403.7-282.3c1.5-4.2-.7-8.9-4.9-10.4" />
+                            </svg>
+                            <div>
+                                <p class="plant-card-label">Last watering</p>
+                                <p class="plant-card-value">4 days ago</p>
+                            </div>
+                        </div>
+                        <div class="plant-card-label-group">
+                            <svg class="plant-card-label-icon" xmlns="http://www.w3.org/2000/svg" width="1em"
+                                height="1em" viewBox="0 0 32 32">
+                                <path fill="currentColor"
+                                    d="M16.612 2.214a1.01 1.01 0 0 0-1.242 0L1 13.419l1.243 1.572L4 13.621V26a2.004 2.004 0 0 0 2 2h20a2.004 2.004 0 0 0 2-2V13.63L29.757 15L31 13.428ZM18 26h-4v-8h4Zm2 0v-8a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v8H6V12.062l10-7.79l10 7.8V26Z" />
+                            </svg>
+                            <div>
+                                <p class="plant-card-label">Location</p>
+                                <p class="plant-card-value">Living Room</p>
+                            </div>
+                        </div>
+
+                        <button class="mark-as-watered-btn btn dark-btn">Mark as watered</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <dialog class="add-plant-modal" data-add-plant-modal>
+        <button class="close-modal" data-close-modal-btn>
+            <i class="fa-solid fa-x"></i>
+        </button>
+
+        <form class="add-plant-form" enctype="multipart/form-data" data-add-plant-form>
+            <div class="input-group">
+                <label class="add-plant-label" for="">Plant Name</label>
+                <input class="add-plant-input" type="text" data-add-plant-modal-name-input>
+            </div>
+            <div class="input-group">
+                <label class="add-plant-label" for="">Plant Location</label>
+                <input class="add-plant-input" type="text" data-add-plant-modal-location-input>
+            </div>
+            <div class="input-group">
+                <label class="add-plant-label" for="">Plant Picture (Optional)</label>
+                <input class="add-plant-input" name="add-plant-input-img" type="file" accept="image/png, image/jpeg"
+                    data-add-plant-modal-picture-input />
+            </div>
+            <div class="input-group">
+                <label class="add-plant-label" for="">Next watering</label>
+                <div class="flex-group">
+                    <input class="add-plant-input number-input" type="number" min="0" required
+                        data-add-plant-modal-next-watering-input>
+                    <select id="unit" name="unit">
+                        <option value="days">Days</option>
+                        <option value="weeks">Weeks</option>
+                        <option value="months">Months</option>
+                    </select>
+                </div>
+            </div>
+            <div class="input-group">
+                <label class="add-plant-label" for="">Watering frequency</label>
+                <div class="flex-group">
+                    <input class="add-plant-input number-input" type="number" min="0" required
+                        data-add-plant-modal-watering-frequency-input>
+                    <span>/</span>
+                    <select id="unit" name="unit">
+                        <option value="days">Day</option>
+                        <option value="weeks">Week</option>
+                        <option value="months">Month</option>
+                    </select>
+                </div>
+            </div>
+
+            <button class="add-plant-submit-btn dark-btn" type="submit">Add Plant</button>
+        </form>
+    </dialog>
+</body>
+
+</html>

@@ -1,0 +1,269 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap");
+
+:root {
+  /* Dark Mode */
+  --blue-700: hsl(209, 23%, 22%);
+  --blue-800: hsl(207, 26%, 17%);
+
+  /* Light Mode */
+  --blue-900: hsl(200, 15%, 8%);
+  --gray-700: hsl(0, 0%, 52%);
+  --gray-100: hsl(0, 0%, 98%);
+  --white-100: hsl(0, 0%, 100%);
+
+  --fs-base: 0.875rem;
+
+  --ff-base: "Nunito Sans", sans-serif;
+
+  --fw-light: 300;
+  --fw-semibold: 600;
+  --fw-extrabold: 800;
+
+  --site-inline-padding: clamp(0.5rem, 5vw, 5rem);
+}
+
+/* CSS Reset */
+
+/* makes sure padding and borders are calculated in the size of an element */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* remove default spacing and force children to inherit the font of their parents by default */
+
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+/* adds hanging punctuation when its the first or last character in text, currently not supported in Chrome as of 2024 */
+
+html {
+  hanging-punctuation: first last;
+}
+
+/* body should take at least the full height of the viewport */
+
+body {
+  min-height: 100svh; /* svh assumes theres a address bar open on mobile and prevents layout shift when it disappears */
+}
+
+/* responsive images/videos */
+
+img,
+video,
+svg,
+picture {
+  display: block; /* images/videos should be on their own line */
+  max-width: 100%; /* width of images and videos should be at most be 100% of their container */
+}
+
+/* Make long headings display evenly across multiple lines by default */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+/* Gets rid of text orphans and limits text line length by default */
+
+p {
+  max-inline-size: 75ch; /* similar to max-width except its a logical property, so it can adjust to different writing mode directions */
+  text-wrap: pretty;
+}
+
+/* eliminates scroll snap behavior when the user prefers reduced motion and adds some space above the section being scrolled to  */
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 3rem; /* personal peference on how much space (usually 3-5 rem) */
+  }
+}
+
+/* Utility Classes */
+.stretched-link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 90;
+}
+
+/* Layouts */
+
+.countries-grid {
+  display: grid;
+  gap: 2rem;
+  padding-inline: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+}
+@media (min-width: 35em) {
+  .countries-grid {
+    padding-inline: 0;
+  }
+}
+
+/* General Styles */
+
+body {
+  background-color: var(--gray-100);
+  color: var(--blue-900);
+  font-family: var(--ff-base);
+  font-size: var(--fs-base);
+}
+
+ul[class] {
+  list-style: none;
+}
+
+/* Primary header Styles */
+
+.primary-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem var(--site-inline-padding);
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+.site-title {
+  text-decoration: none;
+  color: inherit;
+  font-weight: var(--fw-extrabold);
+}
+
+.dark-mode-toggle {
+  background-color: transparent;
+  border: 0;
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+/* Filter Input Styles */
+.countries-input-filter {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 1.5rem;
+  margin-bottom: clamp(2rem, 5vw, 3rem);
+}
+@media (min-width: 60em) {
+  .countries-input-filter {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+/* Search Input Styles */
+.input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  background-color: var(--white-100);
+  color: var(--gray-700);
+  padding-inline: 1rem;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+
+  &:focus-within {
+    outline: 1px solid var(--gray-700);
+  }
+}
+@media (min-width: 60em) {
+  .input-wrapper {
+    width: 40%;
+  }
+}
+
+.countries-search {
+  outline: 0;
+  border: 0;
+  width: 100%;
+  padding-block: 0.75rem;
+}
+
+/* Countries filter Styles */
+.countries-filter {
+  --filter-padding: 0.75rem;
+
+  padding: var(--filter-padding);
+  border: 0;
+  outline: 0;
+  border-right: var(--filter-padding) solid transparent;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+
+  &:focus-within {
+    outline: 1px solid var(--gray-700);
+  }
+}
+
+/* Countries Styles */
+.countries-wrapper {
+  padding: clamp(1.5rem, 5vw, 3rem) var(--site-inline-padding);
+  padding-bottom: 7rem;
+}
+
+.countries-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 7px;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  transition: transform 200ms ease-in-out;
+  max-width: 30ch;
+
+  &:hover {
+    transform: translateY(-10px);
+  }
+}
+
+.countries-card-content {
+  padding: 1rem;
+  padding-bottom: 2rem;
+}
+
+.countries-card-img {
+  height: 10rem;
+}
+
+.countries-card-img img {
+  height: 100%;
+  width: 100%;
+}
+
+.countries-card-title a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: var(--fw-extrabold);
+  font-size: 1rem;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.country-list {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.country-list-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.country-label {
+  font-weight: var(--fw-semibold);
+}
+
+.country-value {
+  font-weight: var(--fw-light);
+}

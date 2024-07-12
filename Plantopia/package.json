@@ -1,0 +1,20 @@
+{
+  "name": "plantopia",
+  "version": "1.0.0",
+  "description": "- Auto-fill",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch --env-file=.env server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@sequelize/core": "^7.0.0-alpha.40",
+    "@sequelize/postgres": "^7.0.0-alpha.40",
+    "express": "^4.19.2",
+    "multer": "^1.4.5-lts.1"
+  }
+}

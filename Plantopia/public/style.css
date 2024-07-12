@@ -1,0 +1,300 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap");
+
+:root {
+  --blue-300: hsla(228 12% 48% / 1);
+  --blue-800: hsla(212 21% 14% / 1);
+  --blue-900: hsla(200 15% 8% / 1);
+  --gray-100: hsla(0 0% 98% / 1);
+  --gray-700: hsla(0 0% 52% / 1);
+  --green-400: hsla(158 36% 37% / 1);
+  --white-100: hsla(0 0 100% / 1);
+  --cream-200: hsla(30 38% 92% / 1);
+
+  --blue-300-hsla: 228 12% 48%;
+  --blue-800-hsla: 212 21% 14%;
+  --blue-900-hsla: 200 15% 8%;
+  --gray-100-hsla: 0 0% 98%;
+  --gray-700-hsla: 0 0% 52%;
+  --green-400-hsla: 158 36% 37%;
+  --white-100-hsla: 0 0 100%;
+  --cream-200-hsla: 30 38% 92%;
+
+  --fs-base: 1rem;
+
+  --ff-base: "Fraunces", serif;
+
+  --fw-light: 300;
+  --fw-normal: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+  --fw-extrabold: 800;
+
+  --site-padding: 3rem;
+}
+
+/* CSS Reset */
+
+/* makes sure padding and borders are calculated in the size of an element */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* remove default spacing and force children to inherit the font of their parents by default */
+
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+/* adds hanging punctuation when its the first or last character in text, currently not supported in Chrome as of 2024 */
+
+html {
+  hanging-punctuation: first last;
+}
+
+/* body should take at least the full height of the viewport */
+
+body {
+  min-height: 100svh; /* svh assumes theres a address bar open on mobile and prevents layout shift when it disappears */
+}
+
+/* responsive images/videos */
+
+img,
+video,
+svg,
+picture {
+  display: block; /* images/videos should be on their own line */
+  max-width: 100%; /* width of images and videos should be at most be 100% of their container */
+}
+
+/* Make long headings display evenly across multiple lines by default */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+/* Gets rid of text orphans and limits text line length by default */
+
+p {
+  max-inline-size: 75ch; /* similar to max-width except its a logical property, so it can adjust to different writing mode directions */
+  text-wrap: pretty;
+}
+
+/* eliminates scroll snap behavior when the user prefers reduced motion and adds some space above the section being scrolled to  */
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 3rem; /* personal peference on how much space (usually 3-5 rem) */
+  }
+}
+
+/* Utility Classes */
+.btn {
+  border: 0;
+  padding: 0.7em 0.85em;
+  text-transform: uppercase;
+  font-size: 0.65rem;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: baseline;
+  gap: 0.2rem;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.dark-btn {
+  background-color: var(--blue-900);
+  color: var(--white-100);
+  transition: all 200ms ease-in;
+
+  &:hover {
+    background-color: hsla(var(--blue-900-hsla) / 0.7);
+  }
+}
+
+.input-group {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.flex-group {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.number-input {
+  width: 20%;
+}
+
+/* Layouts */
+.grid-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  justify-items: center;
+  gap: 2rem;
+}
+@media (min-width: 35em) {
+  .grid-wrapper {
+    justify-items: revert;
+  }
+}
+
+/* General Styles */
+body {
+  background-color: var(--cream-200);
+  font-family: var(--ff-base);
+  font-size: var(--fs-base);
+  color: var(--blue-900);
+  padding: var(--site-padding);
+}
+
+/* Primary Header Styles */
+.primary-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+.site-title a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: var(--fw-bold);
+  font-size: 1.5rem;
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+/* Section Styles */
+.site-section {
+  padding-block: 1rem;
+  margin-bottom: 1rem;
+}
+@media (min-width: 35em) {
+  .site-section {
+    padding: 1.5rem;
+  }
+}
+
+.section-outline {
+  outline: 1px solid var(--blue-900);
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: var(--fw-semibold);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+@media (min-width: 35em) {
+  .section-title {
+    text-align: start;
+  }
+}
+
+/* Section Card Styles */
+.plant-card {
+  max-width: 15rem;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.plant-card-img {
+  margin-bottom: 0.5rem;
+}
+
+.plant-card-content {
+  display: grid;
+  gap: 0.5rem;
+  justify-items: start;
+}
+
+.plant-card-title {
+  font-weight: var(--fw-semibold);
+  font-size: 1.1rem;
+}
+
+.plant-card-label-group {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  text-transform: uppercase;
+}
+
+.plant-card-label {
+  font-weight: var(--fw-light);
+  font-size: 0.7rem;
+}
+
+.plant-card-value {
+  font-weight: var(--fw-medium);
+  font-size: 1rem;
+}
+
+.plant-card-label-icon {
+  font-size: 1.5rem;
+}
+
+.home-icon {
+  font-size: 1.5rem;
+}
+
+/* Modal Styles */
+.add-plant-modal {
+  --modal-padding: 2rem;
+
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: none;
+  border-radius: 5px;
+  padding: var(--modal-padding);
+}
+
+.add-plant-form {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.add-plant-submit-btn {
+  margin-top: 1rem;
+  border: 0;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.add-plant-input {
+  padding: 0.2rem 0.5rem;
+}
+
+.close-modal {
+  position: absolute;
+  right: 0.5rem;
+  top: 0.5rem;
+  cursor: pointer;
+  background-color: transparent;
+  border: 0;
+  width: 2.5rem;
+  aspect-ratio: 1;
+  border-radius: 100vmax;
+  transition: all 200ms ease-in;
+
+  &:hover {
+    background-color: hsla(var(--gray-700-hsla) / 0.08);
+  }
+}
